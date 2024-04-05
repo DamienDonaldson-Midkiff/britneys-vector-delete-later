@@ -28,8 +28,16 @@ int main() {
 
     Test(a.ToString() == "[1, 2, 4]", "ToString");
     c = a.Sum(b);
-    Test(c.ToString() == "", "Sum");
-
+    Test(c.ToString() == "[6, 1, 4]", "Sum");
+    c = a.Sub(b);
+    Test(c.ToString() == "[-4, 3, 4]", "Sub");
+    c = a.ScalarMultiplication(5);
+    Test(c.ToString() == "[5, 10, 20]", "Scalar Mult.");
+    Test(DoubleEquals(a.DotProduct(b), 3), "Dot Product");
+    Test(!a.Equals(b), "Equals");
+    Test(a.Equals(e), "Equals");
+    Test(!a.Equals(d), "Equals");
+    Test(DoubleEquals(a.Distance(b), 6.4031), "Distance");
     return 0;
 }
 
