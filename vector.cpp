@@ -74,7 +74,7 @@ const Vector Vector::Sub(const Vector &rhs) const {
 const Vector Vector::ScalarMultiplication(double value) const {
     Vector retVal(_size, _data);
     for (int i = 0; i < _size; ++i) {
-        retVal._data[i] *= -1;
+        retVal._data[i] *= value;
     }
     return retVal;
 }
@@ -111,4 +111,12 @@ double Vector::Distance(const Vector &rhs) const {
     }
 
     return sqrt(sum);
+}
+
+Vector Vector::operator-() const{
+    return this->ScalarMultiplication(-1);
+}
+
+Vector Vector::operator*(double val) const {
+    return this->ScalarMultiplication(val);
 }

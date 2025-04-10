@@ -24,6 +24,8 @@ public:
     string ToString()const;
     bool Equals(const Vector& rhs)const;
     double Distance(const Vector& rhs)const;
+    Vector operator-() const; // REM YOU ADDED THIS DAMIEN
+    Vector operator*(double val) const; // REM YOU ADDED THIS DAMIEN
 };
 
 
